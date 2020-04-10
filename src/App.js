@@ -15,12 +15,21 @@ const App = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(currentPage).then((res) => {
-      setPokemon(res.data.results);
-      setPrevPage(res.data.previous);
-      setNextPage(res.data.next);
-      setLoading(false);
-    });
+    let cancel;
+    axios
+      .get(currentPage, {
+        cancelToken: new axios.CancelToken(
+          (cancelToken) => (cancel = cancelToken)
+        ),
+      })
+      .then((res) => {
+        setPokemon(res.data.results);
+        setPrevPage(res.data.previous);
+        setNextPage(res.data.next);
+        setLoading(false);
+      });
+
+    return () => cancel();
   }, [currentPage]);
 
   if (loading) return <Spinner />;
