@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import PokemonList from "./components/PokemonList";
+import NavButtons from "./components/NavButtons";
 import Spinner from "./components/Spinner";
 
 const App = () => {
@@ -32,11 +33,23 @@ const App = () => {
     return () => cancel();
   }, [currentPage]);
 
+  const goToNextPage = () => {
+    setCurrentPage(nextPage);
+  };
+
+  const goToPrevPage = () => {
+    setCurrentPage(prevPage);
+  };
+
   if (loading) return <Spinner />;
 
   return (
     <div className="App">
       <PokemonList pokemon={pokemon} />
+      <NavButtons
+        goToNextPage={nextPage ? goToNextPage : null}
+        goToPrevPage={prevPage ? goToPrevPage : null}
+      />
     </div>
   );
 };
