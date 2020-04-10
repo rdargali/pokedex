@@ -5,12 +5,18 @@ import PokemonList from "./components/PokemonList";
 
 const App = () => {
   const [pokemon, setPokemon] = useState([]);
+  const [currentPage, setCurrentPage] = useState(
+    "https://pokeapi.co/api/v2/pokemon"
+  );
+  const [prevPage, setPrevPage] = useState("");
+  const [nextPage, setNextPage] = useState("");
 
   useEffect(() => {
-    axios.get("https://pokeapi.co/api/v2/pokemon").then((res) => {
+    axios.get(currentPage).then((res) => {
       setPokemon(res.data.results);
+      console.log(res.data);
     });
-  }, [pokemon]);
+  }, []);
 
   return (
     <div className="App">
