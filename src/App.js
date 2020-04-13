@@ -19,9 +19,7 @@ const App = () => {
     let cancel;
     axios
       .get(currentPage, {
-        cancelToken: new axios.CancelToken(
-          (cancelToken) => (cancel = cancelToken)
-        ),
+        cancelToken: new axios.CancelToken((c) => (cancel = c)),
       })
       .then((res) => {
         setPokemon(res.data.results);
