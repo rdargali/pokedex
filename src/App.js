@@ -26,7 +26,6 @@ const App = () => {
         setPrevPage(res.data.previous);
         setNextPage(res.data.next);
         setLoading(false);
-        console.log(cancel);
       });
 
     return () => cancel();
