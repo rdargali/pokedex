@@ -41,6 +41,8 @@ const App = () => {
 
   if (loading) return <Spinner />;
 
+  console.log(pokemon);
+
   return (
     <div className="App">
       <PokemonList pokemon={pokemon} />
