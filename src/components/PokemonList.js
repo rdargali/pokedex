@@ -3,7 +3,7 @@ import React from "react";
 const PokemonList = (props) => {
   const cardStyles = {
     boxShadow: "0 4px 8px 0 rgba(0,0,0,0.4)",
-    borderRadius: "",
+    borderRadius: "10px",
     width: "12rem",
     height: "12rem",
     textAlign: "center",
@@ -13,7 +13,8 @@ const PokemonList = (props) => {
   };
 
   const containerStyles = {
-    padding: "2px 16px",
+    padding: "6rem",
+    margin: "auto",
   };
 
   const imgStyles = {
@@ -27,7 +28,7 @@ const PokemonList = (props) => {
           <div className="container" style={containerStyles}>
             <img
               style={imgStyles}
-              src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif`}
+              src={`https://img.pokemondb.net/sprites/home/normal/${pokemon.name}.png`}
               alt={`${pokemon.name}`}
             />
             <h4>
