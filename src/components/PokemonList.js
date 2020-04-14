@@ -1,38 +1,32 @@
 import React from "react";
 
 const PokemonList = (props) => {
-  const cardStyles = {
-    boxShadow: "0 4px 8px 0 rgba(0,0,0,0.4)",
-    borderRadius: "10px",
-    width: "12rem",
-    height: "12rem",
-    textAlign: "center",
-    // justifyContent: "cetner",
-    alignItems: "center",
-    margin: "5px",
+  const cardStyle = {
+    width: "10rem",
+    display: "inline-block",
+    // backgroundolor: "rgba(255,255,255,0.8)",
   };
 
-  const containerStyles = {
-    padding: "6rem",
-    margin: "auto",
-  };
-
-  const imgStyles = {
-    margin: "2px auto",
+  const containterStyle = {
+    margin: "10px auto",
+    maxWidth: "80%",
   };
 
   return (
-    <div>
+    <div style={containterStyle}>
       {props.pokemon.map((pokemon) => (
-        <div key={pokemon.name} className="card" style={cardStyles}>
-          <div className="container" style={containerStyles}>
+        <div key={pokemon.name} className="card m-4 bg-light" style={cardStyle}>
+          <div>
             <img
-              style={imgStyles}
+              className="card-img-top"
               src={`https://img.pokemondb.net/sprites/home/normal/${pokemon.name}.png`}
               alt={`${pokemon.name}`}
             />
-            <h4>
-              <b>{pokemon.name}</b>
+            <h4 className="card-title text-center">
+              <strong>
+                {pokemon.name.charAt(0).toUpperCase() +
+                  pokemon.name.substring(1)}
+              </strong>
             </h4>
           </div>
         </div>
