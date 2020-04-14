@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../App.css";
+
 const PokemonList = (props) => {
   const cardStyle = {
     width: "10rem",
@@ -22,12 +24,12 @@ const PokemonList = (props) => {
               src={`https://img.pokemondb.net/sprites/home/normal/${pokemon.name}.png`}
               alt={`${pokemon.name}`}
             />
-            <h4 className="card-title text-center">
+            <h5 className="card-title text-center">
               <strong>
                 {pokemon.name.charAt(0).toUpperCase() +
                   pokemon.name.substring(1)}
               </strong>
-            </h4>
+            </h5>
           </div>
         </div>
       ))}
