@@ -9,7 +9,7 @@ import Header from "./components/Header";
 const App = () => {
   const [pokemon, setPokemon] = useState([]);
   const [currentPage, setCurrentPage] = useState(
-    "https://pokeapi.co/api/v2/pokemon"
+    "https://pokeapi.co/api/v2/pokemon?limit=50"
   );
   const [prevPage, setPrevPage] = useState("");
   const [nextPage, setNextPage] = useState("");
