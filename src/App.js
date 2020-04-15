@@ -4,6 +4,7 @@ import axios from "axios";
 import PokemonList from "./components/PokemonList";
 import NavButtons from "./components/NavButtons";
 import Spinner from "./components/Spinner";
+import Header from "./components/Header";
 
 const App = () => {
   const [pokemon, setPokemon] = useState([]);
@@ -45,11 +46,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <PokemonList pokemon={pokemon} />
-      <NavButtons
-        goToNextPage={nextPage ? goToNextPage : null}
-        goToPrevPage={prevPage ? goToPrevPage : null}
-      />
+      <Header />
+      <div className="app-container">
+        <NavButtons
+          goToNextPage={nextPage ? goToNextPage : null}
+          goToPrevPage={prevPage ? goToPrevPage : null}
+        >
+          <PokemonList pokemon={pokemon} />
+        </NavButtons>
+      </div>
     </div>
   );
 };

@@ -2,6 +2,11 @@
   margin: 0;
 }
 
+.app-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 body {
   /* background-image: url("./assets/pokemon-background.jpg"); */
   background-color: coral;

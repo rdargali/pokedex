@@ -10,14 +10,14 @@ const PokemonList = (props) => {
   };
 
   const containterStyle = {
-    margin: "10px auto",
-    maxWidth: "80%",
+    margin: "0 auto",
+    width: "75vw",
   };
 
   return (
     <div style={containterStyle}>
       {props.pokemon.map((pokemon) => (
-        <div key={pokemon.name} className="card m-4 bg-light" style={cardStyle}>
+        <div key={pokemon.name} className="card bg-light m-3" style={cardStyle}>
           <div>
             <img
               className="card-img-top"
