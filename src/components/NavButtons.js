@@ -1,23 +1,18 @@
 import React from "react";
-
+import "../App.css";
 const NavButtons = (props) => {
   const buttonStyle = {
     color: "yellow",
 
     width: "10rem",
-    fontSize: "25px",
+    // fontSize: "25px",
   };
 
-  const containerStyle = {
-    // margin: "0 15vw",
-    display: "flex",
-    justifyContent: "space-between",
-  };
   return (
-    <div style={containerStyle}>
+    <div className="button-container">
       {props.goToPrevPage && (
         <button
-          className="btn btn-light"
+          className="btn btn-primary btn-lg"
           style={buttonStyle}
           onClick={props.goToPrevPage}
         >
@@ -25,10 +20,9 @@ const NavButtons = (props) => {
         </button>
       )}
 
-      {props.children}
       {props.goToNextPage && (
         <button
-          className="btn btn-light"
+          className="btn btn-primary btn-lg"
           style={buttonStyle}
           onClick={props.goToNextPage}
         >

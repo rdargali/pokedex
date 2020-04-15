@@ -3,8 +3,8 @@
 }
 
 .app-container {
-  display: flex;
-  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-around; */
 }
 
 body {
@@ -21,4 +21,16 @@ body {
 .card:hover {
   border: 10px solid red;
   box-shadow: -1px 9px 20px 12px rgba(0, 0, 0, 0.25);
+}
+
+.button-container {
+  text-align: center;
+}
+
+.pl-container {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  margin: 20px 15%;
+  /* width: 67rem; */
 }

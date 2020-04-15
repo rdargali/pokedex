@@ -9,13 +9,8 @@ const PokemonList = (props) => {
     // backgroundolor: "rgba(255,255,255,0.8)",
   };
 
-  const containterStyle = {
-    margin: "0 auto",
-    width: "75vw",
-  };
-
   return (
-    <div style={containterStyle}>
+    <div className="pl-container">
       {props.pokemon.map((pokemon) => (
         <div key={pokemon.name} className="card bg-light m-3" style={cardStyle}>
           <div>
@@ -24,12 +19,12 @@ const PokemonList = (props) => {
               src={`https://img.pokemondb.net/sprites/home/normal/${pokemon.name}.png`}
               alt={`${pokemon.name}`}
             />
-            <h5 className="card-title text-center">
+            <div className="card-title text-center">
               <strong>
                 {pokemon.name.charAt(0).toUpperCase() +
                   pokemon.name.substring(1)}
               </strong>
-            </h5>
+            </div>
           </div>
         </div>
       ))}

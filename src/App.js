@@ -47,14 +47,12 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <div className="app-container">
-        <NavButtons
-          goToNextPage={nextPage ? goToNextPage : null}
-          goToPrevPage={prevPage ? goToPrevPage : null}
-        >
-          <PokemonList pokemon={pokemon} />
-        </NavButtons>
-      </div>
+
+      <NavButtons
+        goToNextPage={nextPage ? goToNextPage : null}
+        goToPrevPage={prevPage ? goToPrevPage : null}
+      />
+      <PokemonList pokemon={pokemon} />
     </div>
   );
 };
