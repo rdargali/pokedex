@@ -46,7 +46,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
 
       <NavButtons
         goToNextPage={nextPage ? goToNextPage : null}
