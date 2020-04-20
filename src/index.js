@@ -10,7 +10,7 @@ ReactDOM.render(
     <Header />
     <Switch>
       <Route exact path="/" component={App} />
-      <Route exact path="/:id" component={Pokemon} />
+      <Route exact path="/:name" component={Pokemon} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

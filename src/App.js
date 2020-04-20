@@ -4,7 +4,7 @@ import axios from "axios";
 import PokemonList from "./components/PokemonList";
 import NavButtons from "./components/NavButtons";
 import Spinner from "./components/Spinner";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 
 const App = () => {
   const [pokemon, setPokemon] = useState([]);
