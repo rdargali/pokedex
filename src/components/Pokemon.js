@@ -35,7 +35,10 @@ const Pokemon = (props) => {
       <div className="types">
         {pokemon.types &&
           pokemon.types.map((type) => (
-            <span key={type.type.name}>{type.type.name}</span>
+            <span className={type.type.name} key={type.type.name}>
+              {type.type.name.charAt(0).toUpperCase() +
+                type.type.name.substring(1)}
+            </span>
           ))}
         {/* {pokemon &&
           pokemon.types.map((type) => {
