@@ -64,6 +64,23 @@ h1 {
   color: white;
 }
 
+.hw {
+  margin: 10px;
+  text-align: center;
+}
+
+.hw span {
+  margin: 10px;
+}
+
+.abilities {
+  text-align: center;
+}
+
+.abilities span {
+  margin: 10px;
+}
+
 /******************* TYPES  ********************/
 
 .normal {

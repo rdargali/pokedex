@@ -45,6 +45,22 @@ const Pokemon = (props) => {
             return <span>hi</span>;
           })} */}
       </div>
+      <div className="hw">
+        <span>Height: {((pokemon.height / 10) * 3.2808).toFixed(2)} ft</span>
+        <span>Weight: {((pokemon.weight / 10) * 2.20462).toFixed(2)} lbs</span>
+      </div>
+
+      <div className="abilities">
+        Abilities:
+        {pokemon.abilities &&
+          pokemon.abilities.map((ability) => (
+            <span key={ability.ability.name}>
+              {ability.ability.name.charAt(0).toUpperCase() +
+                ability.ability.name.substring(1)}
+              {ability.is_hidden && "(hidden)"}
+            </span>
+          ))}
+      </div>
     </div>
   );
 };
