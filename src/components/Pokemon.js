@@ -46,12 +46,18 @@ const Pokemon = (props) => {
           })} */}
       </div>
       <div className="hw">
-        <span>Height: {((pokemon.height / 10) * 3.2808).toFixed(2)} ft</span>
-        <span>Weight: {((pokemon.weight / 10) * 2.20462).toFixed(2)} lbs</span>
+        <span>
+          <strong>Height:</strong> {((pokemon.height / 10) * 3.2808).toFixed(2)}{" "}
+          ft
+        </span>
+        <span>
+          <strong>Weight:</strong>{" "}
+          {((pokemon.weight / 10) * 2.20462).toFixed(2)} lbs
+        </span>
       </div>
 
       <div className="abilities">
-        Abilities:
+        <strong>Abilities:</strong>
         {pokemon.abilities &&
           pokemon.abilities.map((ability) => (
             <span key={ability.ability.name}>

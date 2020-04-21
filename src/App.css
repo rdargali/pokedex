@@ -44,7 +44,8 @@ h1 {
 }
 
 .sprites {
-  display: block;
+  width: auto;
+  display: table;
   margin: 0 auto;
 }
 
