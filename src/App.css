@@ -37,3 +37,17 @@ body {
   margin: 20px 15%;
   /* width: 67rem; */
 }
+
+.sprites {
+  display: block;
+  margin: 0 auto;
+}
+
+.sprites img {
+  width: auto;
+  height: 10rem;
+}
+
+h1 {
+  text-align: center;
+}
