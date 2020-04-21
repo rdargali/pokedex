@@ -15,6 +15,8 @@ const Pokemon = (props) => {
 
   console.log(pokemon);
 
+  const baseStats = pokemon.stats;
+
   return (
     <div className="display 4">
       <h1>
@@ -66,6 +68,21 @@ const Pokemon = (props) => {
               {ability.is_hidden && "(hidden ability)"}
             </span>
           ))}
+      </div>
+      <div className="base-stats">
+        <h4>Base Stats</h4>
+        {baseStats &&
+          baseStats
+            .slice(0)
+            .reverse()
+            .map((stat) => {
+              return (
+                <div key={stat.stat.name} className={stat.stat.name}>
+                  {stat.stat.name} {stat.base_stat}
+                  {}
+                </div>
+              );
+            })}
       </div>
     </div>
   );
