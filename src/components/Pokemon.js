@@ -13,9 +13,7 @@ const Pokemon = (props) => {
       .then((res) => setPokemon(res.data));
   }, [name]);
 
-  //   console.log(pokemon);
-
-  //   console.log(pokemon.sprites);
+  console.log(pokemon);
 
   return (
     <div className="display 4">
@@ -33,6 +31,16 @@ const Pokemon = (props) => {
           src={pokemon.sprites && pokemon.sprites.back_default}
           alt={pokemon.name}
         />
+      </div>
+      <div className="types">
+        {pokemon.types &&
+          pokemon.types.map((type) => (
+            <span key={type.type.name}>{type.type.name}</span>
+          ))}
+        {/* {pokemon &&
+          pokemon.types.map((type) => {
+            return <span>hi</span>;
+          })} */}
       </div>
     </div>
   );
