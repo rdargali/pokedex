@@ -57,7 +57,7 @@ const Pokemon = (props) => {
             <span key={ability.ability.name}>
               {ability.ability.name.charAt(0).toUpperCase() +
                 ability.ability.name.substring(1)}
-              {ability.is_hidden && "(hidden)"}
+              {ability.is_hidden && "(hidden ability)"}
             </span>
           ))}
       </div>
