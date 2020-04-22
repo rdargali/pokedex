@@ -8,6 +8,7 @@ export default () => {
     margin: "40px auto",
     marginTop: "30vh",
     display: "block",
+    backgroundColor: "transparent",
   };
   return (
     <div>
