@@ -19,7 +19,7 @@ const PokemonList = (props) => {
           style={cardStyle}
           to="/bulbasaur"
         >
-          <Link to={`/${pokemon.name}`}>
+          <Link className="link" to={`/${pokemon.name}`}>
             <div>
               <img
                 className="card-img-top"

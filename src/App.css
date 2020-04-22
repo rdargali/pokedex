@@ -21,9 +21,13 @@ body {
 }
 
 .card:hover {
-  border: 8px solid red;
+  border: 8px solid #0069d9;
   box-shadow: -1px 9px 20px 12px rgba(0, 0, 0, 0.25);
   transform: scale(1.15);
+}
+
+.link:hover {
+  text-decoration: none;
 }
 
 .button-container {
@@ -40,7 +44,11 @@ body {
 
 h1 {
   text-align: center;
-  text-shadow: aliceblue;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  text-shadow: 2px 2px 1px #ffcd00;
+  font-size: 5rem;
+  padding: 0;
 }
 
 .sprites {
@@ -84,7 +92,7 @@ h1 {
 }
 
 .base-stats {
-  width: 50vw;
+  width: 40vw;
   margin: 20px auto;
 }
 
@@ -93,9 +101,20 @@ h1 {
   /* background-color: transparent; */
   font-weight: bold;
   font-size: medium;
+  border-radius: 10px;
 }
 .progress-bar {
   color: black;
+}
+
+.back {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.fa-undo-alt:hover {
+  color: #ffcd00;
 }
 /******************* TYPES  ********************/
 

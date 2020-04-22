@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 import "../App.css";
 
@@ -7,12 +8,14 @@ import axios from "axios";
 const Pokemon = (props) => {
   let { name } = props.match.params;
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [pokemon, setPokemon] = useState({});
 
   const [pokemonName, setPokemonName] = useState("");
   const [abilities, setAbilities] = useState([]);
   const [pokemonType, setPokemonType] = useState([]);
+  const [img, setImg] = useState("");
+  const [backImg, setBackImg] = useState("");
   const [hp, setHp] = useState(0);
   const [attack, setAttack] = useState(0);
   const [defense, setDefense] = useState(0);
@@ -21,12 +24,15 @@ const Pokemon = (props) => {
   const [speed, setSpeed] = useState(0);
 
   useEffect(() => {
+    setLoading(true);
     axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`).then((res) => {
       setLoading(true);
       setPokemon(res.data);
       setPokemonType(res.data.types);
       setPokemonName(res.data.name);
       setAbilities(res.data.abilities);
+      setImg(res.data.sprites.front_default);
+      setBackImg(res.data.sprites.back_default);
 
       setSpeed(res.data.stats[0].base_stat);
       setSpecialDefense(res.data.stats[1].base_stat);
@@ -37,7 +43,6 @@ const Pokemon = (props) => {
       setLoading(false);
     });
   }, [name]);
-  // console.log(pokemon);
 
   const titleSection = (
     <h1>{pokemonName.charAt(0).toUpperCase() + pokemonName.substring(1)}</h1>
@@ -45,15 +50,8 @@ const Pokemon = (props) => {
 
   const spritesSection = (
     <div className="sprites">
-      <img
-        src={pokemon.sprites && pokemon.sprites.front_default}
-        // src={pokemon.sprites ? pokemon.sprites.front_default : null}
-        alt={pokemon.name}
-      />
-      <img
-        src={pokemon.sprites && pokemon.sprites.back_default}
-        alt={pokemon.name}
-      />
+      <img src={img} alt={pokemon.name} />
+      {backImg && <img src={backImg} alt={pokemon.name} />}
     </div>
   );
 
@@ -116,7 +114,7 @@ const Pokemon = (props) => {
           // aria-valuenow=""
           aria-valuemin="0"
           aria-valuemax="200"
-          style={{ width: `${attack / 2}%`, backgroundColor: "orange" }}
+          style={{ width: `${attack / 2}%`, backgroundColor: "darkorange" }}
         >
           {attack}
         </div>
@@ -186,6 +184,9 @@ const Pokemon = (props) => {
         {heightWeightSection}
         {abilitiesSection}
         {statSection}
+        <Link to="/">
+          <i className="fas fa-undo-alt display-3 back" />
+        </Link>
       </div>
     );
   }
