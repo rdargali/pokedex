@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Spinner from "./Spinner";
 import "../App.css";
 
 import axios from "axios";
@@ -38,6 +39,10 @@ const Pokemon = (props) => {
   }, [name]);
   // console.log(pokemon);
 
+  const titleSection = (
+    <h1>{pokemonName.charAt(0).toUpperCase() + pokemonName.substring(1)}</h1>
+  );
+
   const spritesSection = (
     <div className="sprites">
       <img
@@ -75,7 +80,7 @@ const Pokemon = (props) => {
     </div>
   );
 
-  const heightWeight = (
+  const heightWeightSection = (
     <div className="hw">
       <span>
         <strong>Height:</strong> {((pokemon.height / 10) * 3.2808).toFixed(2)}{" "}
@@ -89,29 +94,108 @@ const Pokemon = (props) => {
   );
 
   const statSection = (
-    <div>
+    <div className="base-stats">
       <h4>Base Stats</h4>
-      <div className="base-stats">
-        <div className="hp">hp {hp}</div>
-        <div className="attack">attack {attack}</div>
-        <div className="defense">defense {defense}</div>
-        <div className="special-attack">spa {specialAttack}</div>
-        <div className="special-defense">spd {specialDefense}</div>
-        <div className="speed">speed {speed}</div>
+      <div className="progress mb-3">
+        <div
+          className="hp progress-bar"
+          role="progressbar"
+          // aria-valuenow=""
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style={{ width: `${hp / 2}%` }}
+        >
+          HP: {hp}
+        </div>
       </div>
-    </div>
-  );
 
-  return (
-    <div>
-      <h1>{pokemonName.charAt(0).toUpperCase() + pokemonName.substring(1)}</h1>
-      {spritesSection}
-      {typesSection}
-      {heightWeight}
-      {abilitiesSection}
-      {statSection}
+      <div className="progress mb-3">
+        <div
+          className="attack progress-bar"
+          role="progressbar"
+          // aria-valuenow=""
+          aria-valuemin="0"
+          aria-valuemax="200"
+          style={{ width: `${attack / 2}%` }}
+        >
+          Attack: {attack}
+        </div>
+      </div>
+
+      <div className="progress mb-3">
+        <div
+          className="defense progress-bar"
+          role="progressbar"
+          // aria-valuenow=""
+          aria-valuemin="0"
+          aria-valuemax="200"
+          style={{ width: `${defense / 2}%` }}
+        >
+          Defense: {defense}
+        </div>
+      </div>
+
+      <div className="progress mb-3">
+        <div
+          className="special-attack progress-bar"
+          role="progressbar"
+          // aria-valuenow=""
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style={{ width: `${specialAttack / 2}%` }}
+        >
+          Special Attack: {specialAttack}
+        </div>
+      </div>
+
+      <div className="progress mb-3">
+        <div
+          className="special-defense progress-bar"
+          role="progressbar"
+          // aria-valuenow=""
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style={{ width: `${specialDefense / 2}%` }}
+        >
+          HP: {hp}
+        </div>
+      </div>
+
+      <div className="progress mb-3 ">
+        <div
+          className="speed progress-bar"
+          role="progressbar"
+          // aria-valuenow=""
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style={{ width: `${speed / 2}%` }}
+        >
+          Speed: {speed}
+        </div>
+      </div>
+
+      <br />
+      {/* <div className="attack">attack {attack}</div>
+      <div className="defense">defense {defense}</div>
+      <div className="special-attack">spa {specialAttack}</div>
+      <div className="special-defense">spd {specialDefense}</div>
+      <div className="speed">speed {speed}</div> */}
     </div>
   );
+  if (loading) {
+    return <Spinner />;
+  } else {
+    return (
+      <div>
+        {titleSection}
+        {spritesSection}
+        {typesSection}
+        {heightWeightSection}
+        {abilitiesSection}
+        {statSection}
+      </div>
+    );
+  }
 };
 
 export default Pokemon;

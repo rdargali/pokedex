@@ -83,6 +83,11 @@ h1 {
   margin: 10px;
 }
 
+.base-stats {
+  width: 60vw;
+  margin: 20px auto;
+}
+
 /******************* TYPES  ********************/
 
 .normal {
