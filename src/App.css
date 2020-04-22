@@ -8,8 +8,14 @@
 }
 
 body {
-  /* background-image: url("./assets/pokemon-background.jpg"); */
+  /* background-image: url("./assets/background-black.png"); */
+  /* background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;  */
+
   background-color: coral;
+
   font-family: "Courier New", Courier, monospace;
 }
 

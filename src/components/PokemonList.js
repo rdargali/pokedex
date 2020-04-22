@@ -29,7 +29,7 @@ const PokemonList = (props) => {
               <div className="card-title text-center">
                 <strong>
                   {pokemon.name.charAt(0).toUpperCase() +
-                    pokemon.name.substring(1)}
+                    pokemon.name.substring(1).replace(/-/g, " ")}
                 </strong>
               </div>
             </div>

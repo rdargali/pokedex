@@ -48,12 +48,26 @@ const Pokemon = (props) => {
     <h1>{pokemonName.charAt(0).toUpperCase() + pokemonName.substring(1)}</h1>
   );
 
-  const spritesSection = (
-    <div className="sprites">
-      <img src={img} alt={pokemon.name} />
-      {backImg && <img src={backImg} alt={pokemon.name} />}
-    </div>
-  );
+  let spritesSection;
+
+  if ((img === null) & (backImg === null)) {
+    spritesSection = (
+      <div className="sprites" style={{ width: "10rem", margin: "2rem auto" }}>
+        <strong>
+          We're sorry, we don't have a sprite of{" "}
+          {pokemonName.charAt(0).toUpperCase() + pokemonName.substring(1)} at
+          this time
+        </strong>
+      </div>
+    );
+  } else {
+    spritesSection = (
+      <div className="sprites">
+        <img src={img} alt={pokemon.name} />
+        {backImg && <img src={backImg} alt={pokemon.name} />}
+      </div>
+    );
+  }
 
   const typesSection = (
     <div className="types">
@@ -71,7 +85,7 @@ const Pokemon = (props) => {
       {abilities.map((ability) => (
         <span key={ability.ability.name}>
           {ability.ability.name.charAt(0).toUpperCase() +
-            ability.ability.name.substring(1)}
+            ability.ability.name.substring(1).replace(/-/g, " ")}
           {ability.is_hidden && "(hidden ability)"}
         </span>
       ))}
