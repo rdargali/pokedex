@@ -84,10 +84,19 @@ h1 {
 }
 
 .base-stats {
-  width: 60vw;
+  width: 50vw;
   margin: 20px auto;
 }
 
+.progress {
+  height: 2rem;
+  /* background-color: transparent; */
+  font-weight: bold;
+  font-size: medium;
+}
+.progress-bar {
+  color: black;
+}
 /******************* TYPES  ********************/
 
 .normal {

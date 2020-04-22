@@ -95,91 +95,84 @@ const Pokemon = (props) => {
 
   const statSection = (
     <div className="base-stats">
-      <h4>Base Stats</h4>
-      <div className="progress mb-3">
+      <strong>HP</strong>
+      <div className="progress mb-2">
         <div
           className="hp progress-bar"
           role="progressbar"
           // aria-valuenow=""
           aria-valuemin="0"
           aria-valuemax="100"
-          style={{ width: `${hp / 2}%` }}
+          style={{ width: `${hp / 2}%`, backgroundColor: "red" }}
         >
-          HP: {hp}
+          {hp}
         </div>
       </div>
-
-      <div className="progress mb-3">
+      <strong>Attack</strong>
+      <div className="progress mb-2">
         <div
           className="attack progress-bar"
           role="progressbar"
           // aria-valuenow=""
           aria-valuemin="0"
           aria-valuemax="200"
-          style={{ width: `${attack / 2}%` }}
+          style={{ width: `${attack / 2}%`, backgroundColor: "orange" }}
         >
-          Attack: {attack}
+          {attack}
         </div>
       </div>
-
-      <div className="progress mb-3">
+      <strong>Defense</strong>
+      <div className="progress mb-2">
         <div
           className="defense progress-bar"
           role="progressbar"
           // aria-valuenow=""
           aria-valuemin="0"
           aria-valuemax="200"
-          style={{ width: `${defense / 2}%` }}
+          style={{ width: `${defense / 2}%`, backgroundColor: "yellow" }}
         >
-          Defense: {defense}
+          {defense}
         </div>
       </div>
-
-      <div className="progress mb-3">
+      <strong>Special Attack</strong>
+      <div className="progress mb-2">
         <div
           className="special-attack progress-bar"
           role="progressbar"
           // aria-valuenow=""
           aria-valuemin="0"
           aria-valuemax="100"
-          style={{ width: `${specialAttack / 2}%` }}
+          style={{ width: `${specialAttack / 2}%`, backgroundColor: "blue" }}
         >
-          Special Attack: {specialAttack}
+          {specialAttack}
         </div>
       </div>
-
-      <div className="progress mb-3">
+      <strong>Special Defense</strong>
+      <div className="progress mb-2">
         <div
           className="special-defense progress-bar"
           role="progressbar"
           // aria-valuenow=""
           aria-valuemin="0"
           aria-valuemax="100"
-          style={{ width: `${specialDefense / 2}%` }}
+          style={{ width: `${specialDefense / 2}%`, backgroundColor: "green" }}
         >
-          HP: {hp}
+          {specialDefense}
         </div>
       </div>
-
-      <div className="progress mb-3 ">
+      <strong>Speed</strong>
+      <div className="progress ">
         <div
           className="speed progress-bar"
           role="progressbar"
           // aria-valuenow=""
           aria-valuemin="0"
           aria-valuemax="100"
-          style={{ width: `${speed / 2}%` }}
+          style={{ width: `${speed / 2}%`, backgroundColor: "pink" }}
         >
-          Speed: {speed}
+          {speed}
         </div>
       </div>
-
-      <br />
-      {/* <div className="attack">attack {attack}</div>
-      <div className="defense">defense {defense}</div>
-      <div className="special-attack">spa {specialAttack}</div>
-      <div className="special-defense">spd {specialDefense}</div>
-      <div className="speed">speed {speed}</div> */}
     </div>
   );
   if (loading) {
