@@ -1,4 +1,4 @@
-# Pokemon Pokedex
+# Pokémon Pokédex
 
 - **An easy to use app for fans of Pokemon that replicates the "Pokedex" from the TV show**
 
@@ -11,7 +11,7 @@
 
 ## Live Site:
 
-- [Pokemon Pokedex](http://rawand-pokedex.surge.sh/)
+- [Pokémon Pokédex](http://rawand-pokedex.surge.sh/)
 
 ## Dependencies
 
