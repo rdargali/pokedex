@@ -11,7 +11,7 @@
 
 ## Live Site:
 
-- [Pokémon Pokédex](http://rawand-pokedex.surge.sh/)
+- [Pokémon Pokédex](https://rdpokedex.netlify.app/)
 
 ## Dependencies
 
